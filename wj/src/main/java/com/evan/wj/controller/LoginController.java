@@ -23,7 +23,7 @@ public class LoginController {
     @PostMapping(value = "api/login")
     @ResponseBody
     public Result login(@RequestBody User requestUser, HttpSession session) {
-        // 对 html 标签进行转义，防止 XSS 攻击
+        // 对 html 标签进行转义，防止 XSS 攻击,参考源代码
         String username = requestUser.getUsername();
         username = HtmlUtils.htmlEscape(username);
 
